@@ -8,6 +8,7 @@ import pandas as pd
 # import polars as pl
 from matplotlib import pyplot as plt, dates
 from matplotlib.ticker import FuncFormatter
+from tabulate import tabulate
 
 # read in stock data based on ticker list and dates, restrict to when the market is open based on SPY
 
@@ -26,16 +27,20 @@ def readin(ticker):
     return d_f
 
 
-def get_summ_stats():
+def get_summ_stats(d_f):
     """
     Return Summary Stats
     """
-    d_f = readin("SPY")
     stats_summary = d_f["PriceChange"].describe()
+
+    summary_statistics = tabulate(d_f, tablefmt="pipe", showindex=False)
+
+    with open("summary_statistics.md", "w",encoding='UTF-8') as file:
+        file.write(summary_statistics)
     return stats_summary
 
 
-def dollars(value):
+def dollars(value, _):
     """
     Format floats to dollars
     'The two args are the value and tick position'
@@ -43,18 +48,17 @@ def dollars(value):
     return f"${value:.0f}"
 
 
-def make_line_graph():
+def make_line_graph(d_f):
     """
     Create Line Graph of
     """
-    d_f = readin("SPY")
     # Create a new figure and a subplot
     # fig, ax = plt.subplots()
     # Plot the OHLC data
     # df['Close'].plot()
     # Set the title and labels
     # ax.xaxis.set_major_formatter(dates.DateFormatter('%m-%y'))
-    figure, axes = plt.subplots()
+    _, axes = plt.subplots()
     d_f["Close"].plot()
     axes.set_xticks(d_f.index)
     plt.locator_params(axis="x", nbins=12)
@@ -67,3 +71,15 @@ def make_line_graph():
     # _ = plt.xticks(rotation=90)
     # Show the plot
     plt.savefig("SPY_Closing.png")
+
+def main():
+    """
+    Main function to perform actions
+    """
+    spy = readin("SPY")
+    make_line_graph(spy)
+    get_summ_stats(spy)
+
+
+if __name__ == "__main__":
+    main()
