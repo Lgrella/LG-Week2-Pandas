@@ -8,13 +8,13 @@ from matplotlib.ticker import FuncFormatter
 from pandas.plotting import table
 
 
-def readin(ticker):
+def readin():
     """
     read in CSV
     Create Daily Price Change Variable
     """
     d_f = pd.read_csv(
-        f"/{ticker}.csv",
+        'SPY.csv',
         parse_dates=["Date"],
         index_col="Date",
     )
@@ -65,7 +65,7 @@ def main():
     """
     Main function to perform actions
     """
-    spy = readin("SPY")
+    spy = readin()
     get_summ_stats(spy)
     make_line_graph(spy)
 
