@@ -1,22 +1,11 @@
-# Python Template
+# Mini-Project 2: Pandas Descriptive Statistics
 ---
-This repo is for the mini-project 1 for IDS 706 Data Engineering Systems
-
----
-Using codespaces, this template uses github actions to create a makefile that performs the following:
-* `make install`
-* `make test`
-* `make lint`
-* `make format`
-
-This template also includes:
-* `main.py` and `test_main.py` to confirm the template and github action are performing as expected.
-* dockerfile
-* Various package versions in `requirements.txt`
+This repo is for the mini-project 2 for IDS 706: Data Engineering Systems
 
 ---
+Using the past year of data for SPY stock, this project reads in the data as a pandas dataframe, charts the SPY daily closing price using matplotlib, and provides summary statistics.
 
-This make file will be used in future projects for this class and personal projects. 
+Dataset: ![SPY.csv]()
 
 ---
 
