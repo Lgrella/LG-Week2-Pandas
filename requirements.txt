@@ -15,3 +15,4 @@ polars
 matplotlib
 datetime
 seaborn
+tabulate
