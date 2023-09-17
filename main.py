@@ -2,15 +2,10 @@
 Created on Fri Sep 15 15:03:11 2023
 @author: lillygrella
 """
-# from datetime import datetime
 import pandas as pd
-
-# import polars as pl
 from matplotlib import pyplot as plt, dates
 from matplotlib.ticker import FuncFormatter
 from pandas.plotting import table
-
-# from tabulate import tabulate
 
 
 def readin(ticker):
@@ -38,7 +33,7 @@ def get_summ_stats(d_f):
 
     table(axes, d_f2, loc="center")
 
-    plt.savefig("sumstats.png")
+    plt.savefig("sumstats.png",bbox_inches='tight')
     return d_f2
 
 
