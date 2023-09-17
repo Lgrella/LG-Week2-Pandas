@@ -15,7 +15,6 @@ For the purposes of this exercise, `Close` is the variable of interest.
 **Summary Statistics of `Close`**
 
 ![my Image](/sumstats.png)
-
 --- 
 
 **Data Visualization: Line Graph of `Close`**
