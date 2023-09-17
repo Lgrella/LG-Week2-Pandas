@@ -14,7 +14,7 @@ def readin(ticker):
     Create Daily Price Change Variable
     """
     d_f = pd.read_csv(
-        f"/workspaces/LG-Week2-Pandas/{ticker}.csv",
+        f"/{ticker}.csv",
         parse_dates=["Date"],
         index_col="Date",
     )
