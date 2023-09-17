@@ -13,7 +13,7 @@ For the purposes of this exercise, `Close` is the variable of interest.
 
 ---
 
-**Summary Statistics of `Close`**
+**Summary Statistics of `Close`(Rounded to Two Decimal Places)**
 
 ![my Image](/sumstats.png)
 --- 
