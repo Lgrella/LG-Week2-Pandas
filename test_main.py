@@ -5,7 +5,7 @@ def test_sumstats():
     """
     confirms summary stats are being calculated correctly
     """
-    spy = readin("SPY")
+    spy = readin()
     series = get_summ_stats(spy)
 
     assert spy["Close"].mean().round(2) == series.iloc[1].round(2)
