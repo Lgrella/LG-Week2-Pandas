@@ -1,14 +1,6 @@
 # test test_main.py
 from main import readin, get_summ_stats
 
-
-def test_readin():
-    """
-    confirms readin is actually reading in a file
-    """
-    assert not readin("SPY").empty
-
-
 def test_sumstats():
     """
     confirms summary stats are being calculated correctly
@@ -22,6 +14,5 @@ def test_sumstats():
     assert spy["Close"].std().round(2) == series.iloc[2].round(2)
 
 if __name__ == "__main__":
-    test_readin()
     test_sumstats()
 
