@@ -20,4 +20,4 @@ For the purposes of this exercise, `Close` is the variable of interest.
 
 **Data Visualization: Line Graph of `Close`**
 
-![my Image](/sumstats.png)
+![my Image](/SPY_Closing.png)
