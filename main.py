@@ -33,8 +33,8 @@ def get_summ_stats(d_f):
 
     table(axes, d_f2, loc="center")
 
-    plt.savefig("sumstats.png",bbox_inches='tight')
-    return d_f2
+    plt.savefig("sumstats.png", bbox_inches="tight")
+    return d_f["Close"].describe()
 
 
 def dollars(value, _):
