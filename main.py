@@ -54,16 +54,16 @@ def make_line_graph():
     # df['Close'].plot()
     # Set the title and labels
     # ax.xaxis.set_major_formatter(dates.DateFormatter('%m-%y'))
-    figure, a_x = plt.subplots()
+    figure, axes = plt.subplots()
     d_f["Close"].plot()
-    a_x.set_xticks(d_f.index)
+    axes.set_xticks(d_f.index)
     plt.locator_params(axis="x", nbins=12)
-    a_x.set_title("SPY Closing Stock Price")
-    a_x.set_xlabel("Date")
-    a_x.set_ylabel("Closing Price")
+    axes.set_title("SPY Closing Stock Price")
+    axes.set_xlabel("Date")
+    axes.set_ylabel("Closing Price")
     # use formatters to specify major and minor ticks
-    a_x.xaxis.set_major_formatter(dates.DateFormatter("%m/%y"))
-    a_x.yaxis.set_major_formatter(FuncFormatter(dollars))
+    axes.xaxis.set_major_formatter(dates.DateFormatter("%m/%y"))
+    axes.yaxis.set_major_formatter(FuncFormatter(dollars))
     # _ = plt.xticks(rotation=90)
     # Show the plot
     plt.savefig("SPY_Closing.png")
